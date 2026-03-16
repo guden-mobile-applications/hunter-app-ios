@@ -1,1 +1,0 @@
-# hunter-app-ios

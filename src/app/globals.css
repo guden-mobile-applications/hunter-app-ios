@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-900: #134e4a;
+
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-primary: rgba(20, 184, 166, 0.1);
+}
+
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --border: #334155;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 0.2) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 0.2) 0, transparent 50%);
+  background-attachment: fixed;
+  font-family: var(--font-sans), sans-serif;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: var(--color-glass-primary);
+  border-color: rgba(20, 184, 166, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px -10px rgba(20, 184, 166, 0.2);
+}
+
+/* Typography styles for markdown content */
+.prose-custom {
+  color: #cbd5e1;
+}
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3,
+.prose-custom h4,
+.prose-custom h5,
+.prose-custom h6 {
+  color: #f8fafc;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+.prose-custom h1 {
+  font-size: 2.25rem;
+}
+.prose-custom h2 {
+  font-size: 1.875rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+.prose-custom h3 {
+  font-size: 1.5rem;
+}
+.prose-custom p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  line-height: 1.75;
+}
+.prose-custom a {
+  color: var(--color-primary-500);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.prose-custom a:hover {
+  color: var(--color-primary-100);
+  text-decoration: underline;
+}
+.prose-custom ul,
+.prose-custom ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+.prose-custom li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  list-style-type: disc;
+}
+.prose-custom blockquote {
+  border-left: 4px solid var(--color-primary-500);
+  background: rgba(20, 184, 166, 0.05);
+  padding: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.prose-custom code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875em;
+  color: #e2e8f0;
+}
+.prose-custom pre {
+  background: #0f172a;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+.prose-custom pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+}

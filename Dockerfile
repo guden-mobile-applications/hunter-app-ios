@@ -1,10 +1,11 @@
-# Standart Nginx imajı
 FROM nginx:alpine
 
-# Dosyaları kopyala
+# Nginx'in varsayılan dosyalarını temizleyelim ki seninkilerle karışmasın
+RUN rm -rf /usr/share/nginx/html/*
+
+# Eğer index.html ana dizindeyse '.' kalsın, 
+# ama bir klasördeyse './klasor_adi' yapmalısın.
 COPY . /usr/share/nginx/html
 
-# Nginx varsayılan olarak 80'de çalışır, o yüzden 80'i belirtiyoruz
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
